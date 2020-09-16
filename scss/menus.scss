@@ -1,0 +1,258 @@
+// general elements
+#menulable{
+    color: white;
+    margin-right: 20px;
+    font-size: 1.2em;
+    @include mQ ($xl){
+        font-size: 2.5em;
+    }
+
+}
+i.ex{
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+
+
+// menu container styling
+.menu-container{
+    width: 100vw;
+    height: 100vh;
+    z-index: $layer3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: left 0.8s ease;
+}
+.menu-card{
+    padding:  0 10px;
+    height: 100vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    @include mQ ($md){
+        padding: 0 50px 0 100px;
+    }
+}
+.menu-bar{
+    margin: 0;
+    height: 12vh;
+    top: 0;
+}
+.screen{
+    background: rgba(255, 255, 255, 0.5);
+    height: 100vh;
+}
+
+
+
+// main menu styling
+
+
+nav{
+    font-size: 1.2em;
+    
+    .menu{ 
+        padding: 0 20px;
+        @include mQ ($xl) {
+            padding: 0 100px;
+        }
+        .accordion{
+            padding-top: 3vh;
+        }
+    }
+
+    form{
+        padding-top: 50px;
+        padding-left: 20px;
+        color: white;
+        input, input:focus{
+            background: $purple!important;
+            color: white!important;
+            border-width: 0 0 1px 0!important;
+            border-color: white!important;
+            box-shadow: 0 1px 0 0 white!important;
+            border-radius: 0!important;
+            @include mQ ($xl) {
+                font-size: 1.2em!important;
+            }
+            &::placeholder{
+                color: white!important;
+            }
+        }
+    }
+    .card{
+        background-color: $purple-hover;
+        color: white;
+        border: 0;
+        margin-bottom: 10px;
+        .card-body{
+            color: white!important;
+            p{
+                font-size: 1em;
+                &:hover{
+                    cursor: pointer;
+                    color: $yellow;
+                }
+            }
+        }
+    }
+    
+    ul{
+        padding: 5px 0 0 40px;
+        li{
+            color: white;
+            transition: all 0.5s ease;
+            &:hover{
+                color: $yellow;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+    }
+    ul#additional-items-list{
+        list-style: none;
+    }
+    a{
+        color: white;
+        &:hover{
+            color: $yellow;
+            text-decoration: none;
+        }
+    }
+    hr{
+        border-top: 1px solid white;
+    }
+    .btn-light{
+        width: 50px;
+        height: 50px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}
+
+
+.chapter-heading{
+    margin: 5px 10px 20px 0;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    @include mQ ($md) {
+        margin: 5px 10px 5px 0;
+        align-items: center;
+    }
+    a {
+        display: flex;
+        align-items: top;
+        @include mQ ($md) {
+            align-items: center;
+        }
+        span{
+            margin-right: 20px;
+        }
+    }
+    a, span.expand{
+        color: white;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.5s ease;
+        font-weight: 700;
+        &:hover{
+            color: $yellow
+        }
+    }
+}
+
+
+
+
+
+// progress menu styling
+#progress-menu-container{
+    .menu-card{
+        .row{
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-left: 20px;
+            @include mQ ($md){
+                padding-left: auto;
+            }
+        }
+        .menu-link{
+            color: white;
+            font-size: 1.5em;
+            margin-right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-progress-icon{
+            color: $light-grey!important;
+            border: 2px solid white!important;
+            margin: 10px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover{
+                color: white!important;
+            }
+        }
+        .completed{
+            background-color: $teal!important;
+            color: white!important;
+            border: 4px solid white!important;
+        }
+    }
+    #progress-bar-detailed{
+        width: 100%;
+        bottom: 0;
+        span#progress-percentage{
+            color: white;
+            font-size: 4em;
+            font-weight: bolder;
+        }
+        span#reset{
+            margin-top: 20px;
+            margin-bottom: 100px;
+            transition: color 0.5s ease;
+            &:hover{
+                cursor: pointer;
+                color: white;
+            }
+        }
+        .line-container-detailed { 
+            width: 100%;
+            
+            .progress-line-detailed {
+                  position: relative;
+                  margin: 0 auto;
+                  border-radius: 10px;
+                  width: 100%;
+                  background: white;
+                  height: 10px;
+                  display: flex;
+                  justify-content: space-between;
+          
+                .progress-detailed {
+                    position: absolute;
+                    height: 100%;
+                    background: $teal;
+                    transition: width 1s ease-in-out;
+                }
+            } 
+        }  
+    }
+}

@@ -1,0 +1,53 @@
+// loading section
+.load{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    padding: 0;
+}
+#stripes{
+    div{
+        height: 100vh;
+        width: Calc(100vw/4);
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        z-index: $front;
+    }
+}
+.stripe.red{
+    left: 0;
+}
+.stripe.teal{
+    left: 25vw;
+}
+.stripe.yellow{
+    left: 50vw;
+}
+.stripe.purple{
+    left: 75vw;
+}
+#loading{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    color: white;
+    z-index: $front;
+    transition: opacity 0.2s ease-out;
+}
+
+.zero-height{
+    animation: striping 0.5s forwards ease;
+}
+
+
+@keyframes striping {
+    from{height: 100vh}
+    to{height: 0vh}
+}
