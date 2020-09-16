@@ -16,7 +16,6 @@ window.addEventListener('load', () => {
         i++;
         if(i  === 4){
             clearInterval(goToZero);
-            addScroll();
         }
     }, 100);
 

@@ -78,7 +78,7 @@
             </div>
             <!-- all menu buttons -->
             <div id="menus" class="col-xs-19 d-flex justify-content-end align-items-center">
-
+                <?php echo do_shortcode('[language-switcher]') ?>
                 <!-- progress menu button -->
                 <button id="progress-menu" class="btn btn-center btn-round btn-warning">
                     <span class="sr-only">Check your progress</span>
@@ -182,12 +182,8 @@
                 </div>
                 <!-- social sharing -->
                 <div class="row">
-                    <div class="col-12 text-left my-5">
-                        <button class="btn btn-light"><i class="fab fa-facebook-f"></i></button>
-                        <button class="btn btn-light"><i class="fab fa-twitter"></i></button>
-                        <button class="btn btn-light"><i class="fab fa-instagram"></i></button>
-                        <button class="btn btn-light"><i class="fab fa-linkedin-in"></i></button>
-                        <button class="btn btn-light"><i class="fab fa-whatsapp"></i></button>
+                    <div class="col-12 my-5">
+                        <!-- need social media share -->
                     </div>
                 </div>
             </div>

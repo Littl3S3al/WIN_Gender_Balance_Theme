@@ -175,14 +175,6 @@ largeButtons();
 animateIntro();
 
 
-// event listener to check window resize
-window.addEventListener('resize', () => {
-    largeButtons();
-    if(window.innerWidth > 992){
-        window.location = 'http://localhost/win';
-    }
-});
-
 // edit chapter buttons to be the right colour
 shortcutButtons.forEach(button => {
     if(button.innerText.toUpperCase().includes('INFOGRAPHIC')){

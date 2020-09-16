@@ -642,7 +642,7 @@ $deviceHeightMax: $deviceWidthMax/1.33;
 }
 
 
-// language switcher
+// language bottom
 #trp-floater-ls{
     left: 80%;
     background: $purple;
@@ -653,5 +653,38 @@ $deviceHeightMax: $deviceWidthMax/1.33;
     @include mQ ($xl) {
         left: 20px;
         padding: 5px;
+    }
+}
+
+// switcher top
+.trp-language-switcher{
+    margin: 10px;
+}
+.trp-language-switcher > div{
+    border: none;
+    background: none;
+    a{
+        font-size: 1.2em;
+        color: $teal;
+        @include mQ ($lg) {
+            font-size: 1.5em;
+        }
+        &:hover{
+            background: none;
+        }
+    }
+}
+
+// image sharer
+.sti-mobile-btn{
+    border-radius: 50%;
+    background-color: $yellow!important;
+}
+.sti-btn{
+    border-radius: 50%;
+    background-color: $teal!important;
+    margin-bottom: 5px;
+    &:hover{
+        background-color: $teal-hover!important;
     }
 }

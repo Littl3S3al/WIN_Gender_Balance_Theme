@@ -87,6 +87,16 @@ $begin = get_field('begin_button');
     
 <!-- getting all info for the menu etc... -->
 <script>
+// event listener to check window resize
+    
+
+window.addEventListener('resize', () => {
+        largeButtons();
+        if(window.innerWidth > 992){
+            window.location = '<?php echo get_page_link() ?>';
+        }
+    });
+
     let chapterContent = [];
 
     // php loop through chapters

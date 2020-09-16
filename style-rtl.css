@@ -456,8 +456,7 @@ input[type=radio]:hover .quiz-form__ans {
   background: #1f8da2;
   color: #fff;
   font-family: inherit;
-  text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 300;
   display: block;
   margin: 1rem auto 4rem auto;
@@ -1331,6 +1330,41 @@ header #menus button {
     left: 20px;
     padding: 5px;
   }
+}
+
+.trp-language-switcher {
+  margin: 10px;
+}
+
+.trp-language-switcher > div {
+  border: none;
+  background: none;
+}
+.trp-language-switcher > div a {
+  font-size: 1.2em;
+  color: #1f8da2;
+}
+@media only screen and (min-width: 992px) {
+  .trp-language-switcher > div a {
+    font-size: 1.5em;
+  }
+}
+.trp-language-switcher > div a:hover {
+  background: none;
+}
+
+.sti-mobile-btn {
+  border-radius: 50%;
+  background-color: #f2a900 !important;
+}
+
+.sti-btn {
+  border-radius: 50%;
+  background-color: #1f8da2 !important;
+  margin-bottom: 5px;
+}
+.sti-btn:hover {
+  background-color: #27b2cd !important;
 }
 
 /*# sourceMappingURL=style-rtl.css.map */

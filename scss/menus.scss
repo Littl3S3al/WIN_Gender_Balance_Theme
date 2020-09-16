@@ -57,9 +57,9 @@ nav{
     font-size: 1.2em;
     
     .menu{ 
-        padding: 0 20px;
+        padding: 30px 20px;
         @include mQ ($xl) {
-            padding: 0 100px;
+            padding: 50px 100px;
         }
         .accordion{
             padding-top: 3vh;

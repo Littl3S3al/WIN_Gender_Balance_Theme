@@ -5,7 +5,7 @@ let menuProgressOpen = false;
 
 
 // running auto functions
-addClass([mainMenuBtn, progressMenuBtn, logo], 'invis-fade');
+addClass([mainMenuBtn, progressMenuBtn, logo, switcher], 'invis-fade');
 
 
 
@@ -13,9 +13,9 @@ addClass([mainMenuBtn, progressMenuBtn, logo], 'invis-fade');
 const menuOpenFunc = (lable) => {
     let buttons = [];
     if(window.innerWidth < 768){
-        buttons = [progressMenuBtn, logo]
+        buttons = [progressMenuBtn, logo, switcher]
     } else {
-        buttons = [progressMenuBtn]
+        buttons = [progressMenuBtn, switcher]
     };
 
     // remove scrolling
@@ -41,7 +41,7 @@ const menuOpenFunc = (lable) => {
 };
 
 const menuCloseFunc = () => {
-    let buttons = [progressMenuBtn, logo];
+    let buttons = [progressMenuBtn, logo, switcher];
 
     // allow scrolling again
     addScroll();
