@@ -688,3 +688,21 @@ $deviceHeightMax: $deviceWidthMax/1.33;
         background-color: $teal-hover!important;
     }
 }
+
+footer{
+    font-size: 1.2em;
+    text-align: center;
+    padding-bottom: 20px;
+    a{
+        color: black;
+        font-size: bolder;
+        text-decoration: underline;
+        &:hover{
+            color: $teal-hover;
+        }
+    }
+    @include mQ ($xl) {
+        text-align: left;
+        padding-bottom: 0;
+    }
+}

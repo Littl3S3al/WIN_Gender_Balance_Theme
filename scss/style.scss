@@ -680,3 +680,20 @@ $deviceHeightMax: $deviceWidthMax/1.33;
     }
 }
 
+footer{
+    font-size: 1.2em;
+    text-align: center;
+    padding-bottom: 20px;
+    a{
+        color: black;
+        font-size: bolder;
+        text-decoration: underline;
+        &:hover{
+            color: $teal-hover;
+        }
+    }
+    @include mQ ($xl){
+        text-align: right;
+        padding-bottom: 0;
+    }
+}

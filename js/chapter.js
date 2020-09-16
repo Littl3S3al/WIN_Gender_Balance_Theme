@@ -40,6 +40,7 @@ const openChapter = () => {
     
     // scroll down to the chapter
     section.scrollIntoView();
+    
 
     // move chapter content, intro and cover to the left
     setTimeout(() => {

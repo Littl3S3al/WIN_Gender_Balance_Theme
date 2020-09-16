@@ -11,7 +11,13 @@
 
 ?>
 
-
+<footer class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+    &#169; 2020 - made by <a href="www.lauraannseal.com">Laura Ann Seal</a>
+    </div>
+  </div>
+</footer>
 
     <!-- aos -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

@@ -31,7 +31,7 @@ $the_query = new WP_Query(array(
     <div class="row">
 
         <!-- chatper text -->
-        <div class="chapter-text" data-content="<?php echo $chapter_link; ?>" data-title="Why gender balance is important">
+        <div class="chapter-text" data-content="<?php echo $chapter_link; ?>" data-title="<?php echo $chapter_title; ?>">
 
         <!-- chapter stripes -->
         <?php get_template_part('template-parts/content', 'stripes') ?>
