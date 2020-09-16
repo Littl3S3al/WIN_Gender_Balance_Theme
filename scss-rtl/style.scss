@@ -4,7 +4,6 @@
 @import 'loading';
 @import 'progress-bar';
 @import 'quiz';
-@import 'resetClass';
 
 
 html{
@@ -434,6 +433,7 @@ $deviceHeightMax: $deviceWidthMax/1.33;
         float: left;
     }
     .chapter-text-inner{
+        direction: rtl;
         padding: 20px;
         @include mQ ($md) {
             padding: 20px 100px 100px 100px;
@@ -664,10 +664,10 @@ $deviceHeightMax: $deviceWidthMax/1.33;
     border: none;
     background: none;
     a{
-        font-size: 1.2em;
+        font-size: 0.8em;
         color: $teal;
         @include mQ ($lg) {
-            font-size: 1.5em;
+            font-size: 1.2em;
         }
         &:hover{
             background: none;

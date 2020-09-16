@@ -134,7 +134,7 @@
             <!-- menu section -->
             <div class="col-12 col-md-8 col-xl-5 menu purple menu-card"> 
                 <div class="row sticky-top purple menu-bar"></div>
-                <div class="row">
+                <div class="row mt-3">
                     <div class="col-6">
                         <img src="<?php bloginfo ('stylesheet_directory'); ?>/assets/WN_logo_white.png" alt="Women In News" class="w-100">
                     </div>
@@ -183,7 +183,7 @@
                 <!-- social sharing -->
                 <div class="row">
                     <div class="col-12 my-5">
-                        <!-- need social media share -->
+                        <?php echo do_shortcode('[Sassy_Social_Share]') ?>
                     </div>
                 </div>
             </div>

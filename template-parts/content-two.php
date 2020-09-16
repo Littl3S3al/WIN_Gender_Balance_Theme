@@ -144,9 +144,26 @@ $the_query = new WP_Query(array(
         <!-- chapter cover image -->
         <div class="col-12 col-md-10 offset-md-1 col-xl-7 offset-xl-0 chapter-image text-center" data-content="<?php echo $chapter_link; ?>">
             <div class="placeholder">
-                <img src="<?php bloginfo ('stylesheet_directory'); ?>/assets/images/02_stereotype_in_media.svg" class="w-100" alt="stereotypes in the media">
+                <img id="stereotype-image" src="<?php bloginfo ('stylesheet_directory'); ?>/assets/images/02_01_stereotype_in_media.png" class="w-100" alt="stereotypes in the media">
             </div>
             <a href="#<?php echo $chapter_next; ?>" class="btn-next btn-line-link btn btn-primary"><?php echo $next ?> <i class="fas fa-arrow-down"></i></a>
         </div>
     </div>
 </section>
+
+<script>
+    // CHAPTER 2 PLACEHOLDER
+    const chap2Placeholder = document.querySelector('#stereotype-image');
+    let chap2Images = [
+        "<?php bloginfo ('stylesheet_directory'); ?>/assets/images/02_01_stereotype_in_media.png", 
+        "<?php bloginfo ('stylesheet_directory'); ?>/assets/images/02_02_stereotype_in_media.png", 
+        "<?php bloginfo ('stylesheet_directory'); ?>/assets/images/02_03_stereotype_in_media.png"
+    ];
+    let j = 0;
+
+    setInterval(() => {
+        if (j >= 3){j = 0};
+        chap2Placeholder.src = chap2Images[j];
+        j++
+    }, 2000);
+</script>

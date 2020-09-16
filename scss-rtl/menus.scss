@@ -104,10 +104,12 @@ nav{
     
     ul{
         padding: 5px 40px 0 0;
-        text-align: right;
+        list-style: none;
         li{
-            color: white;
+            margin-bottom: 10px;
+            color: #cccccc;
             transition: all 0.5s ease;
+            text-align: right;
             &:hover{
                 color: $yellow;
                 text-decoration: none;
@@ -117,6 +119,9 @@ nav{
     }
     ul#additional-items-list{
         list-style: none;
+        li{
+            color: white;
+        }
     }
     a{
         color: white;
