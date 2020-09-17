@@ -323,7 +323,7 @@ quizForms.forEach(quiz => {
         chapter.scrollTop = topPos - 200;
 
         const result = document.querySelector(`.quiz__heading_${number}`);
-        result.style.opacity = 1;
+        result.style.display = "block";
 
         let output = 0;
         const timer = setInterval(() => {

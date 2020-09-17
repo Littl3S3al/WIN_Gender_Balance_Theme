@@ -15,6 +15,7 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
+
 #menulable {
   color: white;
   margin-right: 20px;
@@ -423,12 +424,17 @@ nav .btn-light {
 }
 
 .quiz__heading_1, .quiz__heading_2, .quiz__heading_3, .quiz__heading_4, .quiz__heading_5, .quiz__heading_6 {
-  opacity: 0;
+  display: none;
 }
 
 .result {
-  font-size: 2em;
+  font-size: 1.2em;
   color: #f2a900;
+}
+@media only screen and (min-width: 1200px) {
+  .result {
+    font-size: 2em;
+  }
 }
 
 .quiz__heading-text {

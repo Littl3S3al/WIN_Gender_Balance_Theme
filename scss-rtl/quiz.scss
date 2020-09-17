@@ -1,11 +1,14 @@
 
   .quiz__heading_1,  .quiz__heading_2, .quiz__heading_3, .quiz__heading_4, .quiz__heading_5, .quiz__heading_6{
-    opacity: 0;
+    display: none;
   }
   
   .result {
-    font-size: 2em;
+    font-size: 1.2em;
     color: $yellow;
+    @include mQ ($xl){
+      font-size: 2em;
+    }
   }
 
   .quiz__heading-text {
