@@ -107,6 +107,9 @@ chapterContent.forEach(chapter => {
 chapterContent.forEach(chapter => {
     let i = 1;
     chapter.concepts.forEach(concept => {
+
+        let naught = '0';
+        if(i > 9){ naught = ''};
         // add each concept as a li to the main menu
         document.querySelector(`#list-${chapter.number}`).innerHTML += `
             <li class="chapter-shortcut" data-target="chapter-${chapter.number}" data-shortcut="section-${concept.order}">${concept.title}</li>
@@ -115,19 +118,19 @@ chapterContent.forEach(chapter => {
         // add the first concept, the infographic and the quiz to the progress menu
         if(i === 1){
             document.querySelector(`#progress-section-${chapter.number}`).innerHTML += `
-            <button class="chapter-shortcut btn btn-warning btn-progress-icon" id="chapter-${chapter.number}-section-${i}" data-target="chapter-${chapter.number}" data-shortcut="section-1"><i class="fas fa-align-left"></i></button>
+            <button class="chapter-shortcut btn btn-warning btn-progress-icon" id="chapter-${chapter.number}-section-01" data-target="chapter-${chapter.number}" data-shortcut="section-01"><i class="fas fa-align-left"></i></button>
             `;
-            chapterDetailProgress[chapter.number-1].push('section-' + i);
+            chapterDetailProgress[chapter.number-1].push('section-' + naught + i);
         } else if (concept.title.toUpperCase().includes('INFOGRAPHIC')){
             document.querySelector(`#progress-section-${chapter.number}`).innerHTML += `
-            <button class="chapter-shortcut btn btn-warning btn-progress-icon" id="chapter-${chapter.number}-section-${i}" data-target="chapter-${chapter.number}" data-shortcut="section-${i}"><i class="fas fa-info"></i></button>
+            <button class="chapter-shortcut btn btn-warning btn-progress-icon" id="chapter-${chapter.number}-section-${naught}${i}" data-target="chapter-${chapter.number}" data-shortcut="section-${naught}${i}"><i class="fas fa-info"></i></button>
             `;
-            chapterDetailProgress[chapter.number-1].push('section-' + i);
+            chapterDetailProgress[chapter.number-1].push('section-' + naught + i);
         } else if (concept.title.toUpperCase().includes('QUIZ')){
             document.querySelector(`#progress-section-${chapter.number}`).innerHTML += `
-            <button class="chapter-shortcut btn btn-warning btn-progress-icon" id="chapter-${chapter.number}-quiz" data-target="chapter-${chapter.number}" data-shortcut="section-${i}"><i class="fas fa-question"></i></button>
+            <button class="chapter-shortcut btn btn-warning btn-progress-icon" id="chapter-${chapter.number}-quiz" data-target="chapter-${chapter.number}" data-shortcut="section-${naught}${i}"><i class="fas fa-question"></i></button>
             `;
-            chapterDetailProgress[chapter.number-1].push('section-' + i);
+            chapterDetailProgress[chapter.number-1].push('section-' + naught + i);
         }
         
         i++;

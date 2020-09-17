@@ -55,7 +55,7 @@ const openChapter = () => {
     whichChapter = current;
 
      // make first progress completed
-     addClass([progressMenu.querySelector(`#${current}-section-1`)], 'completed');
+     addClass([progressMenu.querySelector(`#${current}-section-01`)], 'completed');
  
      // event lister for scrolling and if elements come into view then make their progress completed
      chapter.addEventListener('scroll', () => {
