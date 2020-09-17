@@ -154,13 +154,14 @@ nav{
         align-items: center;
     }
     a {
+        text-align: right;
         display: flex;
         align-items: top;
         @include mQ ($md) {
             align-items: center;
         }
         span{
-            margin-right: 20px;
+            margin-left: 20px;
         }
     }
     a, span.expand{
@@ -173,6 +174,11 @@ nav{
             color: $yellow
         }
     }
+    span.expand{
+        padding-left: 10px;
+        padding-right: 25px;
+    }
+
 }
 
 
@@ -182,13 +188,15 @@ nav{
 // progress menu styling
 #progress-menu-container{
     .menu-card{
-        .row{
+        max-width: 100%;
+        overflow-x: hidden;
+        #progress-icons{
             display: flex;
             align-items: center;
             margin-bottom: 20px;
-            padding-right: 20px;
+            padding-left: 40px;
             @include mQ ($md){
-                padding-right: auto;
+                padding-left: auto;
             }
         }
         .menu-link{
@@ -207,13 +215,17 @@ nav{
             color: $light-grey!important;
             border: 2px solid white!important;
             margin: 10px;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
             &:hover{
                 color: white!important;
+            }
+            @include mQ($lg){
+                width: 50px;
+                height: 50px;
             }
         }
         .completed{
@@ -225,6 +237,7 @@ nav{
     #progress-bar-detailed{
         width: 100%;
         bottom: 0;
+        padding: 0 20px;
         span#progress-percentage{
             color: white;
             font-size: 4em;

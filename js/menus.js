@@ -81,7 +81,7 @@ const openMain = () => {
 // open and close progress menu
 const openProgress = () => {
     if(!menuProgressOpen){
-        menuOpenFunc('Your Progress');
+        menuOpenFunc('Progress');
         removeClass([progressMenu], 'offscreen');
         menuProgressOpen = true;
         addClass([mainMenuBtn],'progress-close');

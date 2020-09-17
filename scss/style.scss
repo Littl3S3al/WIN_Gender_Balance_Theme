@@ -261,7 +261,7 @@ $deviceWidthMax: 20vw;
 $deviceHeightMax: $deviceWidthMax/1.33;
 
 #landing{
-    margin-top: 8vh;
+    margin-top: 15vh;
     @include mQ ($sm, landscape) {
        margin-top: 20vh;
     }
@@ -434,30 +434,35 @@ $deviceHeightMax: $deviceWidthMax/1.33;
             padding: 20px 100px 100px 100px;
         }
         @include mQ ($lg) {
-            padding: 20px 300px 100px 100px;
+            padding: 20px 200px 100px 100px;
         }
     }
 
     // styling text
     h1{
-        font-size: 1.5em;
+        font-family:"Avenir LT W04_65 Medium1475536";
+        font-size: 2em;
         font-weight: bolder;
         margin-top: 50px;
+        margin: 100px 0 50px 0;
+    }
+    h2{
+        font-family:"Avenir LT W04_65 Medium1475536";
+        color: white;
+        font-size: 1.7em;
+        font-weight: bolder;
+    }
+    h3{
+        font-family:"Avenir LT W04_65 Medium1475536";
+        color: white;
+        font-size: 1.5em;
     }
 
     // chapter links
-    span.gloss-link{
+    span.gloss-link, span.chapter-shortcut{
         font-weight: bold;
         text-decoration: underline;
         color: $yellow;
-        &:hover{
-            cursor: pointer;
-        }
-    }
-    span.chapter-shortcut{
-        font-weight: bold;
-        text-decoration: underline;
-        color: $red-hover;
         &:hover{
             cursor: pointer;
         }

@@ -44,21 +44,21 @@ const openChapter = () => {
 
     // move chapter content, intro and cover to the left
     setTimeout(() => {
+        // stop body scroll
+        removeScroll();
         addClass([chapter], 'move-right')
         addClass([intro, cover], 'move-more-right');
     }, 500);
-    
-    // stop body scroll
-    removeScroll();
+
 
     // log which chapter is currently open so that function can close that chapter
     whichChapter = current;
 
      // make first progress completed
-    //  addClass([progressMenu.querySelector(`#progress-${current}`)], 'completed');
+     addClass([progressMenu.querySelector(`#${current}-section-1`)], 'completed');
  
      // event lister for scrolling and if elements come into view then make their progress completed
-     chapter.addEventListener('wheel', () => {
+     chapter.addEventListener('scroll', () => {
          let allSections = chapter.querySelectorAll('div');
          allSections.forEach(section => {
              if(section.getBoundingClientRect().bottom <= window.innerHeight && section.getBoundingClientRect().top >= 0){
@@ -70,19 +70,6 @@ const openChapter = () => {
              }
          })
      });
-
-     chapter.addEventListener('touchmove', () => {
-        let allSections = chapter.querySelectorAll('div');
-        allSections.forEach(section => {
-            if(section.getBoundingClientRect().bottom <= window.innerHeight*0.8 && section.getBoundingClientRect().top >= 0){
-                let sectionNo = section.id;
-                let id = progressMenu.querySelector(`#${current}-${sectionNo}`);
-                if(id){
-                    addClass([id], 'completed');
-                }
-            }
-        })
-    });
 
     //  update percentage on the progress menu
      updatePercentage();
@@ -349,7 +336,8 @@ quizForms.forEach(quiz => {
         }, 25);
         
     })
-})
+});
+
 
 
 

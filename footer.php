@@ -19,16 +19,6 @@
   </div>
 </footer>
 
-    <!-- aos -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-
-
-    <!-- loading -->
-    <script src="<?php bloginfo ('stylesheet_directory'); ?>/js/load.js"></script>
-
 <?php wp_footer(); ?>
 
 </body>

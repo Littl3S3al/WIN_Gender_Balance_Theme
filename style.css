@@ -191,15 +191,23 @@ nav .btn-light {
 .chapter-heading a:hover, .chapter-heading span.expand:hover {
   color: #f2a900;
 }
+.chapter-heading span.expand {
+  padding-left: 25px;
+  padding-right: 10px;
+}
 
-#progress-menu-container .menu-card .row {
+#progress-menu-container .menu-card {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+#progress-menu-container .menu-card #progress-icons {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  padding-left: 20px;
+  padding-left: 40px;
 }
 @media only screen and (min-width: 768px) {
-  #progress-menu-container .menu-card .row {
+  #progress-menu-container .menu-card #progress-icons {
     padding-left: auto;
   }
 }
@@ -219,14 +227,20 @@ nav .btn-light {
   color: #b3b3b3 !important;
   border: 2px solid white !important;
   margin: 10px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 #progress-menu-container .menu-card .btn-progress-icon:hover {
   color: white !important;
+}
+@media only screen and (min-width: 992px) {
+  #progress-menu-container .menu-card .btn-progress-icon {
+    width: 50px;
+    height: 50px;
+  }
 }
 #progress-menu-container .menu-card .completed {
   background-color: #1f8da2 !important;
@@ -236,6 +250,7 @@ nav .btn-light {
 #progress-menu-container #progress-bar-detailed {
   width: 100%;
   bottom: 0;
+  padding: 0 20px;
 }
 #progress-menu-container #progress-bar-detailed span#progress-percentage {
   color: white;
@@ -787,7 +802,7 @@ header #menus button {
 }
 
 #landing {
-  margin-top: 8vh;
+  margin-top: 15vh;
 }
 @media only screen and (min-width: 576px) and (orientation: landscape) {
   #landing {
@@ -985,28 +1000,33 @@ header #menus button {
 }
 @media only screen and (min-width: 992px) {
   .chapter-text .chapter-text-inner {
-    padding: 20px 300px 100px 100px;
+    padding: 20px 200px 100px 100px;
   }
 }
 .chapter-text h1 {
-  font-size: 1.5em;
+  font-family: "Avenir LT W04_65 Medium1475536";
+  font-size: 2em;
   font-weight: bolder;
   margin-top: 50px;
+  margin: 100px 0 50px 0;
 }
-.chapter-text span.gloss-link {
+.chapter-text h2 {
+  font-family: "Avenir LT W04_65 Medium1475536";
+  color: white;
+  font-size: 1.7em;
+  font-weight: bolder;
+}
+.chapter-text h3 {
+  font-family: "Avenir LT W04_65 Medium1475536";
+  color: white;
+  font-size: 1.5em;
+}
+.chapter-text span.gloss-link, .chapter-text span.chapter-shortcut {
   font-weight: bold;
   text-decoration: underline;
   color: #f2a900;
 }
-.chapter-text span.gloss-link:hover {
-  cursor: pointer;
-}
-.chapter-text span.chapter-shortcut {
-  font-weight: bold;
-  text-decoration: underline;
-  color: #e0151c;
-}
-.chapter-text span.chapter-shortcut:hover {
+.chapter-text span.gloss-link:hover, .chapter-text span.chapter-shortcut:hover {
   cursor: pointer;
 }
 .chapter-text a {

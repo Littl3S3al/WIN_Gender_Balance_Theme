@@ -262,7 +262,7 @@ $deviceWidthMax: 20vw;
 $deviceHeightMax: $deviceWidthMax/1.33;
 
 #landing{
-    margin-top: 8vh;
+    margin-top: 15vh;
     @include mQ ($sm, landscape) {
        margin-top: 20vh;
     }
@@ -439,39 +439,44 @@ $deviceHeightMax: $deviceWidthMax/1.33;
             padding: 20px 100px 100px 100px;
         }
         @include mQ ($lg) {
-            padding: 20px 100px 100px 300px;
+            padding: 20px 100px 100px 200px;
         }
     }
 
-    // styling text
-    h1{
-        font-size: 1.5em;
-        font-weight: bolder;
-        margin-top: 50px;
-    }
-
-    // chapter links
-    span.gloss-link{
-        font-weight: bold;
-        text-decoration: underline;
-        color: $yellow;
-        &:hover{
-            cursor: pointer;
+        // styling text
+        h1{
+            font-family:"Avenir LT W04_65 Medium1475536";
+            font-size: 2em;
+            font-weight: bolder;
+            margin-top: 50px;
+            margin: 100px 0 50px 0;
         }
-    }
-    span.chapter-shortcut{
-        font-weight: bold;
-        text-decoration: underline;
-        color: $red-hover;
-        &:hover{
-            cursor: pointer;
+        h2{
+            font-family:"Avenir LT W04_65 Medium1475536";
+            color: white;
+            font-size: 1.7em;
+            font-weight: bolder;
         }
-    }
-    a{
-        font-weight: bold;
-        text-decoration: underline;
-        color: $teal-hover;
-    }
+        h3{
+            font-family:"Avenir LT W04_65 Medium1475536";
+            color: white;
+            font-size: 1.5em;
+        }
+    
+        // chapter links
+        span.gloss-link, span.chapter-shortcut{
+            font-weight: bold;
+            text-decoration: underline;
+            color: $yellow;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        a{
+            font-weight: bold;
+            text-decoration: underline;
+            color: $teal-hover;
+        }
 }
 
 .chapter-stripes{

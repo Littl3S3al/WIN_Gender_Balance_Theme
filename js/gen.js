@@ -41,7 +41,6 @@ const numberLinks = document.querySelectorAll('.min-min-screen a span');
 
 // LINES
 const linesDiv = document.querySelector('#lines');
-const placeholders = document.querySelectorAll('.placeholder'); 
 const lineButtons = document.querySelectorAll('.btn-line-link');
 
 // CHAPTER CONTENT
@@ -121,7 +120,7 @@ const largeButtons = () => {
 // animate all landing page elements for screen sizes and languages
 const animateIntro = () => {
     // animate arabic desktop
-    if(document.documentElement.lang === "ar" && window.innerWidth >= 1200){
+    if(document.documentElement.lang === "ar" && window.innerWidth >= 1112){
         addClass([openingScreens[0]], 'animate__fadeInTopRight');
         addClass([openingScreens[1]], 'animate__fadeInDown');
         addClass([openingScreens[2]], 'animate__fadeInTopLeft');
@@ -131,7 +130,7 @@ const animateIntro = () => {
         addClass([title], 'animate__fadeInLeft');
     } 
     // animate english desktop
-    else if(document.documentElement.lang === "en-GB" && window.innerWidth >= 1200){
+    else if(document.documentElement.lang === "en-GB" && window.innerWidth >= 1112){
         addClass([openingScreens[0]], 'animate__fadeInTopLeft');
         addClass([openingScreens[1]], 'animate__fadeInDown');
         addClass([openingScreens[2]], 'animate__fadeInTopRight');
@@ -141,7 +140,7 @@ const animateIntro = () => {
         addClass([title], 'animate__fadeInRight');
     } 
     // animate arabic mobile
-    else if (document.documentElement.lang === "ar" && window.innerWidth < 1200){
+    else if (document.documentElement.lang === "ar" && window.innerWidth < 1112){
         addClass([openingScreens[0]], 'animate__fadeInTopRight');
         addClass([openingScreens[1]], 'animate__fadeInTopLeft');
         addClass([openingScreens[2]], 'animate__fadeInRight');
@@ -152,7 +151,7 @@ const animateIntro = () => {
     
     } 
     // animate english mobile
-    else if (document.documentElement.lang === "en-GB" && window.innerWidth < 1200){
+    else if (document.documentElement.lang === "en-GB" && window.innerWidth < 1112){
         addClass([openingScreens[0]], 'animate__fadeInTopLeft');
         addClass([openingScreens[1]], 'animate__fadeInTopRight');
         addClass([openingScreens[2]], 'animate__fadeInLeft');

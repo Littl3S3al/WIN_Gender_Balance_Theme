@@ -11,6 +11,8 @@ $begin = get_field('begin_button');
 
 ?>
 
+<?php get_template_part('template-parts/content', 'mainHead') ?>
+
  <!-- landing section -->
 <section id="landing" class="container-fluid d-flex align-items-center">
     <div class="row d-flex justify-content-center">
@@ -81,21 +83,36 @@ $begin = get_field('begin_button');
 
 <!-- bootstrap js -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
     
 <!-- getting all info for the menu etc... -->
 <script>
-// event listener to check window resize
-    
-
+    const placeholders = document.querySelectorAll('.placeholder'); 
+// event listener to check window resize on desktop
 window.addEventListener('resize', () => {
         largeButtons();
-        if(window.innerWidth > 992){
+        if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && !userAgent.match(/iPad/i) && !userAgent.match(/iPhone/i) ) {
             window.location = '<?php echo get_page_link() ?>';
         }
     });
+
+    // replace images on mobile
+    if(window.innerWidth <= 992){
+        const chap3Img = placeholders[2].querySelector('img');
+        const chap4Img = placeholders[3].querySelector('img');
+        const chap6Img = placeholders[5].querySelector('img');
+
+        chap3Img.src = "<?php bloginfo ('stylesheet_directory'); ?>/assets/images/03_actions_mobile.png";
+        chap4Img.src = "<?php bloginfo ('stylesheet_directory'); ?>/assets/images/04_strategies_mobile.png";
+        chap6Img.src = "<?php bloginfo ('stylesheet_directory'); ?>/assets/images/06_champions_mobile.png";
+
+    }
+
+window.addEventListener("orientationchange", function(event) {
+    window.location = '<?php echo get_page_link() ?>';   
+});
 
     let chapterContent = [];
 
@@ -126,7 +143,7 @@ window.addEventListener('resize', () => {
 			chapterContent[0].concepts.push({
                 title: '<?php the_title(); ?>',
                 arabicTitle: '<?php the_field('arabic_title') ?>',
-                order: <?php the_field('section_number') ?>
+                order: '<?php the_field('section_number') ?>'
             })
 
 		<?php 
@@ -143,7 +160,7 @@ window.addEventListener('resize', () => {
             chapterContent[1].concepts.push({
                 title: '<?php the_title(); ?>',
                 arabicTitle: '<?php the_field('arabic_title') ?>',
-                order: <?php the_field('section_number') ?>
+                order: '<?php the_field('section_number') ?>'
             })
 
 		<?php 
@@ -159,7 +176,7 @@ window.addEventListener('resize', () => {
             chapterContent[2].concepts.push({
                 title: '<?php the_title(); ?>',
                 arabicTitle: '<?php the_field('arabic_title') ?>',
-                order: <?php the_field('section_number') ?>
+                order: '<?php the_field('section_number') ?>'
             })
 
         <?php 
@@ -176,7 +193,7 @@ window.addEventListener('resize', () => {
             chapterContent[3].concepts.push({
                 title: '<?php the_title(); ?>',
                 arabicTitle: '<?php the_field('arabic_title') ?>',
-                order: <?php the_field('section_number') ?>
+                order: '<?php the_field('section_number') ?>'
             })
 
         <?php 
@@ -192,7 +209,7 @@ window.addEventListener('resize', () => {
             chapterContent[4].concepts.push({
                 title: '<?php the_title(); ?>',
                 arabicTitle: '<?php the_field('arabic_title') ?>',
-                order: <?php the_field('section_number') ?>
+                order: '<?php the_field('section_number') ?>'
             })
 
         <?php 
@@ -208,7 +225,7 @@ window.addEventListener('resize', () => {
             chapterContent[5].concepts.push({
                 title: '<?php the_title(); ?>',
                 arabicTitle: '<?php the_field('arabic_title') ?>',
-                order: <?php the_field('section_number') ?>
+                order: '<?php the_field('section_number') ?>'
             })
 
         <?php 
@@ -242,6 +259,16 @@ window.addEventListener('resize', () => {
 
 <!-- draw lines -->
 <script src="<?php bloginfo ('stylesheet_directory'); ?>/js/lines.js"></script>
+
+<!-- aos -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+
+<!-- loading -->
+<script src="<?php bloginfo ('stylesheet_directory'); ?>/js/load.js"></script>
 
 <?php  
 get_footer();

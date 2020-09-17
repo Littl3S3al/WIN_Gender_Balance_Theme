@@ -132,14 +132,22 @@ const arabicLines = () => {
 
 }
 
-if(document.documentElement.lang === "ar" && window.innerWidth >= 992){
+if(document.documentElement.lang === "ar" && window.innerWidth >= 1112){
+    if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+        setTimeout(() => {
+            arabicLines();
+        }, 1500); 
+    }
     setTimeout(() => {
-        arabicLines();
         addScroll();
     }, 1500);
-} else if(document.documentElement.lang === "en-GB" && window.innerWidth >= 992){
+} else if(document.documentElement.lang === "en-GB" && window.innerWidth >= 1112){
+    if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+        setTimeout(() => {
+            lines();
+        }, 1500); 
+    }
     setTimeout(() => {
-        lines();
         addScroll();
     }, 1500);
 }
