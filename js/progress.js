@@ -26,10 +26,16 @@ const updateProgress = () => {
     // counting the number of chapters visited for the progress bar at the bottom
     trackedChapters = 0;
     for(i = 0; i < chapterTracker.openedChapters.length; i ++){
-        if(chapterTracker.openedChapters[i]){
+        count = 0;
+        chapterTracker.detailChapters.forEach((chapter) => {
+            if(chapter.includes(`chapter-${i}`)){
+                count ++;
+            }
+        });
+        if(count === 3){
             trackedChapters ++;
         }
-    } 
+    }
     
     // adjusting the styles on the progress bar at the bottom
     let barWidth

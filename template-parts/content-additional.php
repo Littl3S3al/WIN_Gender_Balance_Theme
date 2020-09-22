@@ -52,13 +52,18 @@
                               </div>
                         </form>
                     </div>
+                    <div class="col-12 p-0" id="gloss-keyword-row"></div>
+
+                    <div class="col-12 p-0">
+                        <hr>
+                    </div>
 
                     <!-- glossary cards -->
                     <?php $loop = new WP_Query( array('post_type' => 'glossary', 'orderby' => 'post_id', 'order' => 'ASC'));?>
 
                     <?php while( $loop ->have_posts()) : $loop->the_post(); ?>
 
-                    <div class="col-12 card" id="glossary-<?php the_field('target') ?>">
+                    <div class="col-12 card gloss-term" id="glossary-<?php the_field('target') ?>">
                         <div class="card-body">
                             <h3><?php the_title(); ?></h3>
                             <?php the_content(); ?>

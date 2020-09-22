@@ -102,14 +102,10 @@ $the_query = new WP_Query(array(
                     <br>
                     <!-- chapter buttons -->
                     <div class="chapter-buttons" data-aos="fade-up" data-aos-offset="100">
-                        <button class="mb-3 btn btn-danger read-it" data-target="<?php echo $chapter_link; ?>" data-aos="fade-up">
+                        <div data-aos="fade-up" data-aos-offset="100">
+                        <button class="btn btn-danger read-it" data-target="<?php echo $chapter_link; ?>">
                             <?php echo $read_it; ?>
                         </button>
-
-                        <br>
-
-                        <div data-aos="fade-up" data-aos-offset="100">
-
                             <?php if( $the_query->have_posts() ): ?>
 
                                 <?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
@@ -124,6 +120,7 @@ $the_query = new WP_Query(array(
 
                         </div>
                     </div>
+
                     <!-- buttons which only appear when chapter opens -->
 
                     <div class="open-chapter-buttons hidden-buttons">

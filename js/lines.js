@@ -53,7 +53,7 @@ const lines = () => {
             H ${window.innerWidth - 60} ${trt}
             V ${point4.top + point4.height/6} ${brt}
             H ${point4.right - point4.width*0.835}
-            V ${point5.top - 200} ${blt}
+            V ${point5.top - 150} ${blt}
             H ${window.innerWidth - 60} ${trt}
             V ${point5.top + point5.height/2.65} ${brt}
             H ${point5.left + point5.width/2}
@@ -97,19 +97,19 @@ const arabicLines = () => {
             V ${point2.top + point2.height/2.25} ${blt}
             H ${point2.right - point2.width/2}
             V ${window.innerHeight * 2} ${blt}
-            H ${point2.right + 400} ${trt}
+            H ${point2.right + 200} ${trt}
             V ${window.innerHeight * 2 + 200}
         " fill="transparent" stroke="#1f8da2" stroke-width="10"/>
 
-        <circle cx="${point2.right + 400 + 10}" cy="${window.innerHeight * 2 + 200}" r="25" fill="#1f8da2"/>
+        <circle cx="${point2.right + 200 + 10}" cy="${window.innerHeight * 2 + 200}" r="25" fill="#1f8da2"/>
 
         <path d="
             M ${point3.left + point3.width/2} ${point3.bottom - 100}
             V ${window.innerHeight * 3} ${blt}
-            H ${point4.right} ${trt}
+            H ${point4.right + 50} ${trt}
             V ${point4.top + point4.height/2} ${brt}
             H ${point4.left + point4.width*0.165}
-            V ${point5.top - 200} ${blt}
+            V ${point5.top - 150} ${blt}
             H ${point5.right} ${trt}
             V ${point5.top + point5.height/2.85} ${brt}
             H ${point5.left + point5.width/2}

@@ -33,6 +33,7 @@ const additionalScrollable = document.querySelector('.additional-content');
 const glossaryForm = document.querySelector('#glossary-search-form');
 const glossaryText = document.querySelector('#glossary');
 const glossarySearch = document.querySelector('#glossary-search-form input');
+const glossSearchSpace = document.querySelector('#gloss-keyword-row');
 
 // LANDING PAGE
 const openingScreens = document.querySelectorAll('.min-screen');
@@ -104,12 +105,10 @@ const largeButtons = () => {
     if(window.innerWidth >= 992){
         addClass([mainMenuBtn, progressMenuBtn], 'btn-lg');
         addClass(nextButtons, 'btn-lg');
-        addClass(readitButtons, 'btn-lg');
         addClass(closeChapterBtns, 'btn-lg');
      } else {
         removeClass([mainMenuBtn, progressMenuBtn], 'btn-lg');
         removeClass(nextButtons, 'btn-lg');
-        removeClass(readitButtons, 'btn-lg');
         removeClass(closeChapterBtns, 'btn-lg');
      }
 };
@@ -176,11 +175,11 @@ animateIntro();
 
 // edit chapter buttons to be the right colour
 shortcutButtons.forEach(button => {
-    if(button.innerText.toUpperCase().includes('INFOGRAPHIC')){
+    if(button.innerText.toUpperCase().includes('INFOGRAPHIC') || button.innerText.includes('انفوجرافيك')){
         let text = button.innerText;
         button.innerHTML = `<i class="fas fa-info"></i> ${text}`;
         button.classList.add('btn-primary');
-    } else if (button.innerText.toUpperCase().includes('QUIZ')){
+    } else if (button.innerText.toUpperCase().includes('QUIZ') || button.innerText.includes('اختبر معلوماتك')){
         let text = button.innerText;
         button.innerHTML = `<i class="fas fa-question"></i> ${text}`;
         button.classList.add('btn-warning');
@@ -188,11 +187,11 @@ shortcutButtons.forEach(button => {
 });
 
 chapterLinkButtons.forEach(button => {
-    if(button.innerText.toUpperCase().includes('INFOGRAPHIC')){
+    if(button.innerText.toUpperCase().includes('INFOGRAPHIC') || button.innerText.includes('انفوجرافيك')){
         let text = button.innerText;
         button.innerHTML = `<i class="fas fa-info"></i> ${text}`;
         button.classList.add('btn-primary');
-    } else if (button.innerText.toUpperCase().includes('QUIZ')){
+    } else if (button.innerText.toUpperCase().includes('QUIZ') || button.innerText.includes('اختبر معلوماتك')){
         let text = button.innerText;
         button.innerHTML = `<i class="fas fa-question"></i> ${text}`;
         button.classList.add('btn-warning');

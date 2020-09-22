@@ -80,12 +80,36 @@ $begin = get_field('begin_button');
 <?php get_template_part('template-parts/content', 'additional') ?>
 
 
+<div id="endNote" class="container-fluid p-5">
+    <div class="row d-flex justify-content-bottom">
+        <div class="col-12 col-md-12">
+            <h2>That's it folks</h2>
+            <p>Here are some links to additional resources that you might be interested in:</p>
+            
+            <div class="row d-flex">
+                <div class="col-12 col-md-10">
+                    <button class="btn btn-warning additional-link" data-target="glossary">Glossary</button>
 
-<!-- bootstrap js -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+                    <?php $loop = new WP_Query( array('post_type' => 'additional', 'orderby' => 'post_id', 'order' => 'ASC'));?>
 
+                    <?php while( $loop ->have_posts()) : $loop->the_post(); ?>
+
+                        <?php if( get_field('add_to_bottom') ) : ?>
+                            <button class="btn btn-warning additional-link" data-target="<?php the_field('data-target') ?>"><?php the_title() ?></button>
+                        <?php endif; ?>
+                    <?php 
+                        endwhile; 
+                        wp_reset_query();
+                    ?>
+                </div>
+
+                <div class="col-12 col-md-2">
+                    <a href="#landing" class="btn btn-primary">Back to top <i class="fas fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     
 <!-- getting all info for the menu etc... -->
 <script>
@@ -100,14 +124,10 @@ window.addEventListener('resize', () => {
 
     // replace images on mobile
     if(window.innerWidth <= 992){
-        const chap3Img = placeholders[2].querySelector('img');
         const chap4Img = placeholders[3].querySelector('img');
-        const chap6Img = placeholders[5].querySelector('img');
 
-        chap3Img.src = "<?php bloginfo ('stylesheet_directory'); ?>/assets/images/03_actions_mobile.png";
         chap4Img.src = "<?php bloginfo ('stylesheet_directory'); ?>/assets/images/04_strategies_mobile.png";
-        chap6Img.src = "<?php bloginfo ('stylesheet_directory'); ?>/assets/images/06_champions_mobile.png";
-
+    
     }
 
 window.addEventListener("orientationchange", function(event) {

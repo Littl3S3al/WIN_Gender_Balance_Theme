@@ -31,6 +31,7 @@ const openChapter = () => {
 
         // swap out buttons
         setTimeout(() => {
+            addClass([intro], 'add-scroll');
             addClass([intro.querySelector('.chapter-buttons')], 'hidden-buttons');
             removeClass([intro.querySelector('.open-chapter-buttons')], 'hidden-buttons');
             addClass([mainMenuBtn, progressMenuBtn], 'btn-dark');
@@ -56,20 +57,23 @@ const openChapter = () => {
 
      // make first progress completed
      addClass([progressMenu.querySelector(`#${current}-section-01`)], 'completed');
- 
+     updateLocalStorage();
      // event lister for scrolling and if elements come into view then make their progress completed
      chapter.addEventListener('scroll', () => {
          let allSections = chapter.querySelectorAll('div');
          allSections.forEach(section => {
-             if(section.getBoundingClientRect().bottom <= window.innerHeight && section.getBoundingClientRect().top >= 0){
+             if(section.getBoundingClientRect().bottom <= window.innerHeight){
                  let sectionNo = section.id;
                  let id = progressMenu.querySelector(`#${current}-${sectionNo}`);
                  if(id){
                      addClass([id], 'completed');
+                     updateLocalStorage();
                  }
              }
          })
      });
+
+     
 
     //  update percentage on the progress menu
      updatePercentage();
@@ -99,7 +103,7 @@ const closeChapter = () => {
     removeClass([mainMenuBtn, progressMenuBtn], 'btn-dark');
     linesDiv.style.opacity = 1;
 
-    
+    removeClass([intro], 'add-scroll');
     removeClass([chapter], 'move-right');
     removeClass([intro, cover], 'move-more-right');
     
@@ -266,6 +270,7 @@ quizForms.forEach(quiz => {
 
 
         addClass([progressMenu.querySelector(`#${whichChapter}-quiz`)], 'completed');
+        updateLocalStorage();
 
 
         let correctAns;
@@ -319,11 +324,11 @@ quizForms.forEach(quiz => {
         })
 
         let chapter = findChapterContent(whichChapter, chapters);
-        let topPos = quiz.offsetTop;
-        chapter.scrollTop = topPos - 200;
 
         const result = document.querySelector(`.quiz__heading_${number}`);
         result.style.display = "block";
+        let topPos = result.offsetTop;
+        chapter.scrollTop = topPos - 200;
 
         let output = 0;
         const timer = setInterval(() => {

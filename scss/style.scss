@@ -51,14 +51,14 @@ h1{
     font-family:"Avenir LT W04_65 Medium1475536";
     font-weight: bolder;
     @include mQ ($xl) {
-        font-size: 5em;
+        font-size: 4em;
     }
 }
 h1.small{
     font-size: 1em;
     color: $dark-grey;
     @include mQ ($xl){
-        font-size: 1.6em;
+        font-size: 1.4em;
     }
 }
 h2.small{
@@ -78,7 +78,7 @@ h2{
 }
 p{
     @include mQ ($lg){
-        font-size: 1.2em;
+        font-size: 1em;
     }
 }
 
@@ -129,9 +129,10 @@ p{
 
 // buttons
 .btn{
+    white-space: normal;
     border-radius: 50px;
     @include mQ ($lg){
-        font-size: 1.2em;
+        font-size: 1em;
     }
 }
 .btn-center{
@@ -144,8 +145,8 @@ p{
     height: 38px;
     border-radius: 50%;
     @include mQ ($lg) {
-        width: 62px;
-        height: 62px;
+        width: 50px;
+        height: 50px;
     }
 }
 .btn-light{
@@ -192,12 +193,14 @@ p{
 }
 .btn-lg{
     padding: .7rem 1.2rem;
-    font-size: 1.45rem;
+    font-size: 1rem;
     line-height: 1.7;
 }
 
 section{
-    min-height: 100vh;
+    @include mQ ($xl){
+        min-height: 100vh;
+    }
 }
 
 // page fixtures
@@ -234,14 +237,6 @@ header{
                 margin-right: 20px;
             }
         }
-    }
-}
-
-
-.btn-next{
-    display: none;
-    @include mQ ($md) {
-        display: inline-block;
     }
 }
 
@@ -313,22 +308,20 @@ $deviceHeightMax: $deviceWidthMax/1.33;
     align-items: center;
     justify-content: center;
     a.number{
-        display: none;
-        @include mQ ($xl) {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease;
-            text-decoration: none;
-            justify-content: center;
-            span{
-                background: $purple!important;
-            }
-            &:hover{
-                opacity: 1;
-            }
+        display: flex;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease;
+        text-decoration: none;
+        justify-content: center;
+        span{
+            background: $purple!important;
         }
+        &:hover{
+            opacity: 1;
+        }
+
     }
 }
 
@@ -419,7 +412,7 @@ $deviceHeightMax: $deviceWidthMax/1.33;
     }
     // inside the chapter styles
     .close-section{
-        padding: 0 0 100px 0;
+        padding: 0 0 50px 0;
         margin: 0;
         top: 0!important;
     }
@@ -429,7 +422,7 @@ $deviceHeightMax: $deviceWidthMax/1.33;
         float: right;
     }
     .chapter-text-inner{
-        padding: 20px;
+        padding: 20px 20px 150px 20px;
         @include mQ ($md) {
             padding: 20px 100px 100px 100px;
         }
@@ -500,6 +493,16 @@ $deviceHeightMax: $deviceWidthMax/1.33;
         padding-right: 0;
     }
 }
+.add-scroll{
+    max-height: 100vh;
+    overflow-y: scroll;
+    padding-bottom: 150px;
+    &::-webkit-scrollbar {
+        display: none;
+      }
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
 .chapter-image{
     transition: all 0.5s ease;
     left: 0;
@@ -541,8 +544,7 @@ $deviceHeightMax: $deviceWidthMax/1.33;
         text-align: left;
     }
     .navigationBtns{
-        position: fixed;
-        bottom: 20px;
+        padding-top: 40px;
     }
 }
 .open-chapter-buttons-mobile{
@@ -628,6 +630,20 @@ $deviceHeightMax: $deviceWidthMax/1.33;
     .card.highlighted{
         background: $yellow;
     }
+    #gloss-keyword-row{
+        .card{
+            background: $teal; 
+            color: white;
+            border: none;
+        }
+        .card-body {
+            background: $teal-hover;
+            &:hover{
+                cursor: pointer;
+                font-weight: bolder;
+            }
+        }
+    }
 }
 
 #lines{
@@ -686,19 +702,26 @@ $deviceHeightMax: $deviceWidthMax/1.33;
 }
 
 footer{
-    font-size: 1.2em;
-    text-align: center;
-    padding-bottom: 20px;
+    color: white;
+    background: $navy;
     a{
-        color: black;
-        font-size: bolder;
-        text-decoration: underline;
+        color: white;
+        text-decoration: none;
+        transition: color 0.5s ease;
         &:hover{
-            color: $teal-hover;
+            color: $yellow;
+            text-decoration: none;
         }
     }
-    @include mQ ($xl){
-        text-align: right;
-        padding-bottom: 0;
+    .row{
+        padding-bottom: 100px;
+    }
+}
+
+#endNote{
+    background: #e6e6e6;
+    .btn{
+        margin: 5px 2px; 
+        text-align: left;
     }
 }
