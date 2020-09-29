@@ -150,7 +150,7 @@ $the_query = new WP_Query(array(
         <!-- chapter cover image -->
         <div class="col-12 col-md-10 offset-md-1 col-xl-7 offset-xl-0 chapter-image text-center" data-content="<?php echo $chapter_link; ?>">
             <div class="placeholder">
-                <img src="<?php bloginfo ('stylesheet_directory'); ?>/assets/images/01_gender_balance.svg" class="w-100" alt="gender balance">
+                <img src="<?php bloginfo ('stylesheet_directory'); ?>/assets/images/01_gender_balance.png" class="w-100" alt="gender balance">
             </div>
             <a href="#<?php echo $chapter_next; ?>" class="btn-next btn-line-link btn btn-primary"><?php echo $next; ?> <i class="fas fa-arrow-down"></i></a>
         </div>

@@ -88,14 +88,14 @@ $begin = get_field('begin_button');
             
             <div class="row d-flex">
                 <div class="col-12 col-md-10">
-                    <button class="btn btn-warning additional-link" data-target="glossary">Glossary</button>
+                    <button class="btn btn-primary additional-link" data-target="glossary">Glossary</button>
 
                     <?php $loop = new WP_Query( array('post_type' => 'additional', 'orderby' => 'post_id', 'order' => 'ASC'));?>
 
                     <?php while( $loop ->have_posts()) : $loop->the_post(); ?>
 
                         <?php if( get_field('add_to_bottom') ) : ?>
-                            <button class="btn btn-warning additional-link" data-target="<?php the_field('data-target') ?>"><?php the_title() ?></button>
+                            <button class="btn btn-primary additional-link" data-target="<?php the_field('data-target') ?>"><?php the_title() ?></button>
                         <?php endif; ?>
                     <?php 
                         endwhile; 
@@ -104,7 +104,7 @@ $begin = get_field('begin_button');
                 </div>
 
                 <div class="col-12 col-md-2">
-                    <a href="#landing" class="btn btn-primary">Back to top <i class="fas fa-arrow-up"></i></a>
+                    <a href="#landing" class="btn btn-warning">Back to top <i class="fas fa-arrow-up"></i></a>
                 </div>
             </div>
         </div>
@@ -126,7 +126,7 @@ window.addEventListener('resize', () => {
     if(window.innerWidth <= 992){
         const chap4Img = placeholders[3].querySelector('img');
 
-        chap4Img.src = "<?php bloginfo ('stylesheet_directory'); ?>/assets/images/04_strategies_mobile.png";
+        chap4Img.src = "<?php bloginfo ('stylesheet_directory'); ?>/assets/images/04_strategies_mobile.svg";
     
     }
 

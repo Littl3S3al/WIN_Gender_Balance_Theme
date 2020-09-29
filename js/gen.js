@@ -179,7 +179,7 @@ shortcutButtons.forEach(button => {
         let text = button.innerText;
         button.innerHTML = `<i class="fas fa-info"></i> ${text}`;
         button.classList.add('btn-primary');
-    } else if (button.innerText.toUpperCase().includes('QUIZ') || button.innerText.includes('اختبر معلوماتك')){
+    } else if (button.innerText.toUpperCase().includes('QUIZ') || button.innerText.includes('اختبار')){
         let text = button.innerText;
         button.innerHTML = `<i class="fas fa-question"></i> ${text}`;
         button.classList.add('btn-warning');
@@ -191,7 +191,7 @@ chapterLinkButtons.forEach(button => {
         let text = button.innerText;
         button.innerHTML = `<i class="fas fa-info"></i> ${text}`;
         button.classList.add('btn-primary');
-    } else if (button.innerText.toUpperCase().includes('QUIZ') || button.innerText.includes('اختبر معلوماتك')){
+    } else if (button.innerText.toUpperCase().includes('QUIZ') || button.innerText.includes('اختبار')){
         let text = button.innerText;
         button.innerHTML = `<i class="fas fa-question"></i> ${text}`;
         button.classList.add('btn-warning');
